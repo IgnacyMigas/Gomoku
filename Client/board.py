@@ -44,7 +44,7 @@ def check_win(markers, x_player, width):
         return True
 
 
-class abstractBoard(object):
+class AbstractBoard(object):
     __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
@@ -56,7 +56,7 @@ class abstractBoard(object):
         pass
 
 
-class Board(abstractBoard):
+class Board(AbstractBoard):
     def __init__(self, width):
         self.w = width
         self.surface = pygame.display.set_mode((width * 100, width * 100), 0, 32)
@@ -121,8 +121,8 @@ class Board(abstractBoard):
     def draw_score(self):
         if check_win(self.markers, True, self.w):
             score = u"Wygrales(as)"
-        elif check_win(self.markers, True, self.w):
-            score = u"Przegraes(as)"
+        elif check_win(self.markers, False, self.w):
+            score = u"Przegrales(as)"
         elif None not in self.markers:
             score = u"Remis!"
         else:

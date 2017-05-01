@@ -5,7 +5,7 @@ import socket
 
 class MyClient:
     def __init__(self, address, port, data_size):
-        self.data_size=data_size
+        self.data_size = data_size
         self._createTcpSocket()
         self._connectToServer(address, port)
 
@@ -13,7 +13,6 @@ class MyClient:
         self.sock.send(msg)
         response = self.sock.recv(self.data_size)
         return response
-#        print ('recive %s' % response)
 
     def reciveMsg(self):
         response = self.sock.recv(self.data_size)

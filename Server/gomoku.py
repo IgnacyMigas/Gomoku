@@ -37,8 +37,3 @@ class Gomoku:
             x, y = map(int, msg.split())
             if not self.ai_turn:
                 self.ai_turn = self.board.player_move(self.server, x, y)
-
-
-if __name__ == "__main__":
-    game = Gomoku(4)
-    game.run()

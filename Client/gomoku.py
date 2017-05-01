@@ -1,7 +1,6 @@
 #!/usr/bin/pyhon2.7.9
 
 import pygame
-from board import Board
 import board
 
 
@@ -11,7 +10,7 @@ class Gomoku:
         self.fps_clock = pygame.time.Clock()
 
         self.client = client
-        self.board = Board(width)
+        self.board = board.Board(width)
         self.ai_turn = ai_turn
 
     def run(self):
@@ -35,8 +34,3 @@ class Gomoku:
                     continue
                 x, y = pygame.mouse.get_pos()
                 self.ai_turn = self.board.player_move(self.client, x, y)
-
-
-if __name__ == "__main__":
-    game = Gomoku(4)
-    game.run()
